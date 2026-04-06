@@ -42,6 +42,7 @@ from .example_record import (
     make_example,
     make_secondary_semantics,
 )
+from .explained_retrieval import ExplainedRetrievalResult, make_explained_retrieval
 from .factor_system import NounFactorTag, ParticleFactorTag, VerbFactorTag, factor_system
 from .fractal_storage import cantor_pair, fractal_fold, invert_cantor_pair, phi
 from .generation_template import GenerationPurpose, GenerationTemplate, make_template
@@ -92,8 +93,10 @@ from .morph_family import (
     FiveVerbTag,
     morph_family_id,
 )
+from .nucleus import NucleusId, NucleusLayer, all_layers, layer
 from .ontology_hub import DomainHub, OntologyCategory, OntologyNode, make_ontology_node
 from .pre_compositional import PreCompositionalValue, compute_pre_compositional
+from .qiyas_layer import IllaMatchStrength, QiyasNode, QiyasType, make_qiyas
 from .readiness import full_readiness, partial_readiness, readiness_envelope
 from .relation_frame import RoleTag, relation_frame
 from .relation_nodes import (
@@ -305,5 +308,16 @@ __all__ = [
     "make_secondary_semantics",
     "make_template",
     "make_trace",
+    # Phase 9 – nuclei layer map + explained retrieval + qiyas
+    "ExplainedRetrievalResult",
+    "IllaMatchStrength",
+    "NucleusId",
+    "NucleusLayer",
+    "QiyasNode",
+    "QiyasType",
+    "all_layers",
+    "layer",
+    "make_explained_retrieval",
+    "make_qiyas",
 ]
 

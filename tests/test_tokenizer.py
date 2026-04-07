@@ -54,3 +54,45 @@ def test_normalization_maps_removed_diacritics_to_original_slice() -> None:
     assert tokens[0].normalized == "قران"
     assert tokens[0].text == text
     assert (tokens[0].start, tokens[0].end) == (0, len(text))
+
+
+# ---- Punctuation & mixed-script span tests ----
+
+
+def test_tokenize_arabic_question_mark_preserves_spans() -> None:
+    text = "ماذا؟"
+    tokens = CreativeTokenizer().tokenize(text)
+    assert [t.normalized for t in tokens] == ["ماذا", "؟"]
+    for t in tokens:
+        assert t.text == text[t.start : t.end]
+
+
+def test_tokenize_sequential_punctuation_preserves_spans() -> None:
+    text = "!!؟"
+    tokens = CreativeTokenizer().tokenize(text)
+    for t in tokens:
+        assert t.text == text[t.start : t.end]
+    assert [t.normalized for t in tokens] == ["!", "!", "؟"]
+
+
+def test_tokenize_arabic_indic_digits_span() -> None:
+    text = "عام ٢٠٢٤"
+    tokens = CreativeTokenizer().tokenize(text)
+    assert [t.normalized for t in tokens] == ["عام", "٢٠٢٤"]
+    for t in tokens:
+        assert t.text == text[t.start : t.end]
+
+
+def test_tokenize_mixed_arabic_latin_spans() -> None:
+    text = "لغة Python جميلة"
+    tokens = CreativeTokenizer().tokenize(text)
+    for t in tokens:
+        assert t.text == text[t.start : t.end]
+
+
+def test_tokenize_arabic_semicolon_preserves_spans() -> None:
+    text = "قال؛ ذهب"
+    tokens = CreativeTokenizer().tokenize(text)
+    assert [t.normalized for t in tokens] == ["قال", "؛", "ذهب"]
+    for t in tokens:
+        assert t.text == text[t.start : t.end]

@@ -81,13 +81,15 @@ class CliticRules:
             json.dump(self.to_dict(), fh, ensure_ascii=False, indent=2)
 
 
-# Pre-built default matching current hard-coded behaviour
-CliticRules.DEFAULT = CliticRules(  # type: ignore[attr-defined]
+#: Pre-built default rules matching current hard-coded behaviour.
+DEFAULT_CLITIC_RULES = CliticRules(
     prefixes=_PREFIXES,
     suffixes=_SUFFIXES,
     min_stem_length=2,
     bidirectional=True,
 )
+# Alias for convenience on the class itself
+CliticRules.DEFAULT = DEFAULT_CLITIC_RULES  # type: ignore[attr-defined]
 
 
 @dataclass(frozen=True, slots=True)

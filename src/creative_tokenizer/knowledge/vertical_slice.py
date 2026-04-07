@@ -135,9 +135,8 @@ def vertical_slice(text: str) -> SliceResult:
     has_verb_flag = _has_verb(analyses_tuple)
     any_root_found = any(wa.root is not None for wa in analyses_tuple)
 
-    # Count ambiguity: if any word has no root, there's potential ambiguity
+    # Count ambiguity: if any non-trivial word has no root, there's potential ambiguity
     unknown_count = sum(1 for wa in analyses_tuple if wa.root is None and len(wa.text) > 1)
-    ambiguity = max(1, unknown_count)  # at least 1 if there are unknowns
 
     ctx: dict[str, object] = {
         "has_reality": True,            # any utterance refers to reality
@@ -147,7 +146,7 @@ def vertical_slice(text: str) -> SliceResult:
         "has_prior_opinion": False,      # no contamination in pipeline
         "judgement_type": "existence" if has_verb_flag else "",
         "has_convention": any_root_found,  # words have lexical convention
-        "ambiguity_count": ambiguity if unknown_count > 0 else 1,
+        "ambiguity_count": unknown_count if unknown_count > 0 else 1,
         "has_standard": True,           # we have a formal standard (the ontology)
         "has_fruit": has_verb_flag and any_root_found,  # complete if verb + known words
     }

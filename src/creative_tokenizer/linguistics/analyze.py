@@ -315,7 +315,7 @@ def analyze_word(
 
     # ── Layer 6: Word identity ────────────────────────────────────────
     lex_type = LexicalType.ROOT if found_root else LexicalType.JAMID
-    indep = IndependenceGrade.AUTONOMOUS if found_root else IndependenceGrade.AUTONOMOUS
+    indep = IndependenceGrade.DERIVED if found_root else IndependenceGrade.AUTONOMOUS
     carrier = r_id if found_root else skel_id
 
     wid = compute_word_identity(

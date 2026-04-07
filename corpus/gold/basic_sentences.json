@@ -1,0 +1,340 @@
+[
+  {
+    "id": "gold_001",
+    "text": "كَتَبَ الطالبُ الدرسَ",
+    "annotations": {
+      "tokens": [
+        {"text": "كَتَبَ", "normalized": "كتب", "start": 0, "end": 5, "root": ["ك","ت","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الطالبُ", "normalized": "الطالب", "start": 6, "end": 13, "root": ["ط","ل","ب"], "pattern": "فَاعِل"},
+        {"text": "الدرسَ", "normalized": "الدرس", "start": 14, "end": 19, "root": ["د","ر","س"], "pattern": "فَعْل"}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Basic transitive sentence"
+  },
+  {
+    "id": "gold_002",
+    "text": "ذَهَبَ الولدُ",
+    "annotations": {
+      "tokens": [
+        {"text": "ذَهَبَ", "normalized": "ذهب", "start": 0, "end": 5, "root": ["ذ","ه","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الولدُ", "normalized": "الولد", "start": 6, "end": 11}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Intransitive verb"
+  },
+  {
+    "id": "gold_003",
+    "text": "جَلَسَ الرجلُ",
+    "annotations": {
+      "tokens": [
+        {"text": "جَلَسَ", "normalized": "جلس", "start": 0, "end": 5, "root": ["ج","ل","س"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الرجلُ", "normalized": "الرجل", "start": 6, "end": 11}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Intransitive — sitting"
+  },
+  {
+    "id": "gold_004",
+    "text": "فَتَحَ المعلمُ البابَ",
+    "annotations": {
+      "tokens": [
+        {"text": "فَتَحَ", "normalized": "فتح", "start": 0, "end": 5, "root": ["ف","ت","ح"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "المعلمُ", "normalized": "المعلم", "start": 6, "end": 13},
+        {"text": "البابَ", "normalized": "الباب", "start": 14, "end": 19}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Transitive — opening"
+  },
+  {
+    "id": "gold_005",
+    "text": "سَمِعَ الولدُ الصوتَ",
+    "annotations": {
+      "tokens": [
+        {"text": "سَمِعَ", "normalized": "سمع", "start": 0, "end": 5, "root": ["س","م","ع"], "pattern": "فَعِلَ", "event_type": "STATE"},
+        {"text": "الولدُ", "normalized": "الولد", "start": 6, "end": 11},
+        {"text": "الصوتَ", "normalized": "الصوت", "start": 12, "end": 17}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "EXPERIENCER"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "State verb — perception"
+  },
+  {
+    "id": "gold_006",
+    "text": "عَلِمَ المسلمُ الحقَّ",
+    "annotations": {
+      "tokens": [
+        {"text": "عَلِمَ", "normalized": "علم", "start": 0, "end": 5, "root": ["ع","ل","م"], "pattern": "فَعِلَ", "event_type": "STATE"},
+        {"text": "المسلمُ", "normalized": "المسلم", "start": 6, "end": 13},
+        {"text": "الحقَّ", "normalized": "الحق", "start": 14, "end": 19}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "EXPERIENCER"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "State verb — knowing"
+  },
+  {
+    "id": "gold_007",
+    "text": "نَصَرَ اللهُ المؤمنينَ",
+    "annotations": {
+      "tokens": [
+        {"text": "نَصَرَ", "normalized": "نصر", "start": 0, "end": 5, "root": ["ن","ص","ر"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "اللهُ", "normalized": "الله", "start": 6, "end": 10},
+        {"text": "المؤمنينَ", "normalized": "المومنين", "start": 11, "end": 19}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Transitive — divine aid"
+  },
+  {
+    "id": "gold_008",
+    "text": "دَخَلَ الرجلُ المسجدَ",
+    "annotations": {
+      "tokens": [
+        {"text": "دَخَلَ", "normalized": "دخل", "start": 0, "end": 5, "root": ["د","خ","ل"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الرجلُ", "normalized": "الرجل", "start": 6, "end": 11},
+        {"text": "المسجدَ", "normalized": "المسجد", "start": 12, "end": 19}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "LOCATIVE"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Entry verb with locative"
+  },
+  {
+    "id": "gold_009",
+    "text": "خَرَجَ الطالبُ",
+    "annotations": {
+      "tokens": [
+        {"text": "خَرَجَ", "normalized": "خرج", "start": 0, "end": 5, "root": ["خ","ر","ج"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الطالبُ", "normalized": "الطالب", "start": 6, "end": 13}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Intransitive — exit"
+  },
+  {
+    "id": "gold_010",
+    "text": "حَكَمَ القاضي بالعدلِ",
+    "annotations": {
+      "tokens": [
+        {"text": "حَكَمَ", "normalized": "حكم", "start": 0, "end": 5, "root": ["ح","ك","م"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "القاضي", "normalized": "القاضي", "start": 6, "end": 12},
+        {"text": "بالعدلِ", "normalized": "بالعدل", "start": 13, "end": 19}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "INSTRUMENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Transitive with instrumental PP"
+  },
+  {
+    "id": "gold_011",
+    "text": "قَالَ الرجلُ الحقَّ",
+    "annotations": {
+      "tokens": [
+        {"text": "قَالَ", "normalized": "قال", "start": 0, "end": 4, "root": ["ق","و","ل"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الرجلُ", "normalized": "الرجل", "start": 5, "end": 10},
+        {"text": "الحقَّ", "normalized": "الحق", "start": 11, "end": 16}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Hollow verb (أجوف)"
+  },
+  {
+    "id": "gold_012",
+    "text": "عَمِلَ الطالبُ",
+    "annotations": {
+      "tokens": [
+        {"text": "عَمِلَ", "normalized": "عمل", "start": 0, "end": 5, "root": ["ع","م","ل"], "pattern": "فَعِلَ", "event_type": "ACTION"},
+        {"text": "الطالبُ", "normalized": "الطالب", "start": 6, "end": 13}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Intransitive action"
+  },
+  {
+    "id": "gold_013",
+    "text": "ضَرَبَ المعلمُ الطاولةَ",
+    "annotations": {
+      "tokens": [
+        {"text": "ضَرَبَ", "normalized": "ضرب", "start": 0, "end": 5, "root": ["ض","ر","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "المعلمُ", "normalized": "المعلم", "start": 6, "end": 13},
+        {"text": "الطاولةَ", "normalized": "الطاوله", "start": 14, "end": 22}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Transitive — striking"
+  },
+  {
+    "id": "gold_014",
+    "text": "نَظَرَ الرجلُ",
+    "annotations": {
+      "tokens": [
+        {"text": "نَظَرَ", "normalized": "نظر", "start": 0, "end": 5, "root": ["ن","ظ","ر"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الرجلُ", "normalized": "الرجل", "start": 6, "end": 11}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Intransitive — looking"
+  },
+  {
+    "id": "gold_015",
+    "text": "شَرِبَ الطفلُ الماءَ",
+    "annotations": {
+      "tokens": [
+        {"text": "شَرِبَ", "normalized": "شرب", "start": 0, "end": 5, "root": ["ش","ر","ب"], "pattern": "فَعِلَ", "event_type": "ACTION"},
+        {"text": "الطفلُ", "normalized": "الطفل", "start": 6, "end": 11},
+        {"text": "الماءَ", "normalized": "الماء", "start": 12, "end": 17}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "AGENT"},
+        {"head": 0, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Transitive — drinking"
+  },
+  {
+    "id": "gold_016",
+    "text": "هل كَتَبَ الطالبُ",
+    "annotations": {
+      "tokens": [
+        {"text": "هل", "normalized": "هل", "start": 0, "end": 2},
+        {"text": "كَتَبَ", "normalized": "كتب", "start": 3, "end": 8, "root": ["ك","ت","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الطالبُ", "normalized": "الطالب", "start": 9, "end": 16}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "AGENT"}
+      ],
+      "classification": {"type": "إنشاء", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Yes/no question"
+  },
+  {
+    "id": "gold_017",
+    "text": "يا طالبُ",
+    "annotations": {
+      "tokens": [
+        {"text": "يا", "normalized": "يا", "start": 0, "end": 2},
+        {"text": "طالبُ", "normalized": "طالب", "start": 3, "end": 8}
+      ],
+      "relations": [],
+      "classification": {"type": "إنشاء", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Vocative"
+  },
+  {
+    "id": "gold_018",
+    "text": "أين ذَهَبَ الرجلُ",
+    "annotations": {
+      "tokens": [
+        {"text": "أين", "normalized": "اين", "start": 0, "end": 3},
+        {"text": "ذَهَبَ", "normalized": "ذهب", "start": 4, "end": 9, "root": ["ذ","ه","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "الرجلُ", "normalized": "الرجل", "start": 10, "end": 15}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "AGENT"}
+      ],
+      "classification": {"type": "إنشاء", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Wh-question — where"
+  },
+  {
+    "id": "gold_019",
+    "text": "الحمدُ للهِ",
+    "annotations": {
+      "tokens": [
+        {"text": "الحمدُ", "normalized": "الحمد", "start": 0, "end": 5, "root": ["ح","م","د"]},
+        {"text": "للهِ", "normalized": "لله", "start": 6, "end": 9}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Nominal sentence — praise"
+  },
+  {
+    "id": "gold_020",
+    "text": "بسم الله الرحمن الرحيم",
+    "annotations": {
+      "tokens": [
+        {"text": "بسم", "normalized": "بسم", "start": 0, "end": 3},
+        {"text": "الله", "normalized": "الله", "start": 4, "end": 8},
+        {"text": "الرحمن", "normalized": "الرحمن", "start": 9, "end": 15, "root": ["ر","ح","م"]},
+        {"text": "الرحيم", "normalized": "الرحيم", "start": 16, "end": 22, "root": ["ر","ح","م"]}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Basmala — frozen religious expression"
+  }
+]

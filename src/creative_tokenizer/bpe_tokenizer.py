@@ -4,6 +4,8 @@ from .pretokenizer import pretokenize
 from .tokenizer import Token
 from .trainer.bpe import BpeMerges
 
+__all__ = ["BpeTokenizer"]
+
 
 def _apply_merges(word: str, merges: list[tuple[str, str]]) -> list[str]:
     pieces = list(word)

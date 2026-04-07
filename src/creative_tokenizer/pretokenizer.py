@@ -5,6 +5,8 @@ from dataclasses import dataclass
 
 from .normalization import normalize_text
 
+__all__ = ["PreToken", "pretokenize"]
+
 _WORD_PATTERN = re.compile(
     r"[\u0621-\u063A\u0641-\u064A\u0660-\u0669A-Za-z0-9]+|[^\s]",
     re.UNICODE,

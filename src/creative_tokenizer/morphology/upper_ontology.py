@@ -1,5 +1,6 @@
-"""Upper ontology — twelve top-level nodes, ten macro layers, eleven
-transition relations, eight governing constraints, and a circular chain.
+"""Upper ontology — twelve top-level nodes, ten macro layers, twelve
+transition relations (eleven forward + one feedback), eight governing
+constraints, and a circular ascending chain.
 
 The ontology begins from **reality** (الواقع), not from the sign or from
 logic, and ascends through perception, prior knowledge, rational binding,
@@ -34,10 +35,16 @@ rest of the morphology package.
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass
 from enum import IntEnum
 
 from .fractal_storage import cantor_pair, fractal_fold
+
+
+def _stable_str_hash(s: str) -> int:
+    """Deterministic 31-bit hash of a string, stable across Python sessions."""
+    return int.from_bytes(hashlib.sha256(s.encode()).digest()[:4], "big") % (2**31)
 
 # ═══════════════════════════════════════════════════════════════════════
 # §1  Top-level node index  (twelve nodes)
@@ -233,7 +240,9 @@ class MacroLayer:
 
 def _macro_id(idx: MacroLayerIndex, concepts: tuple[str, ...]) -> int:
     concept_fold = (
-        fractal_fold([cantor_pair(i + 1, hash(c) % (2**31)) for i, c in enumerate(concepts)])
+        fractal_fold([
+            cantor_pair(i + 1, _stable_str_hash(c)) for i, c in enumerate(concepts)
+        ])
         if concepts
         else 0
     )

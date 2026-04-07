@@ -2,6 +2,10 @@
 
 ## Completed
 
+- Official Architectural Charter v2 (`docs/charter.md`) — formal Arabic-language
+  specification of the knowledge architecture: 13 chapters, 62 articles covering
+  cognitive nuclei pipeline, transition protocols, verification modes, and
+  implementation requirements.
 - Baseline rule-based tokenizer with diacritic normalization and clitic segmentation.
 - Stable span contract (`token.text == source[start:end]`) enforced across backends.
 - Shared `pretokenizer.py` layer — normalization + word-boundary split reused by all backends.

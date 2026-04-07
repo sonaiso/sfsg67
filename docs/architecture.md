@@ -1,5 +1,10 @@
 # Architecture
 
+See [charter.md](charter.md) for the official architectural charter
+(الميثاق المعماري الرسمي) that defines the foundational principles, cognitive
+nuclei pipeline, transition protocols, verification modes, and implementation
+requirements governing this project.
+
 ## Layers
 
 1. `normalization.py` — converts raw text into normalized text plus a positional

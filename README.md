@@ -48,3 +48,4 @@ for token in tokens:
 - `python -m compileall src tests`
 - `ruff check .`
 - `mypy src`
+# sfsg67 create with best practices

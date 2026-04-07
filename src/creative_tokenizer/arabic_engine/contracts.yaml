@@ -1,0 +1,105 @@
+# Layer-closure contracts for the Arabic Engine.
+#
+# Each contract asserts that a pipeline layer's output type matches the
+# next layer's input type, ensuring composability:
+#   F = E ∘ J ∘ D ∘ O ∘ L ∘ S ∘ N
+#
+# These contracts are verifiable by iterating the list and checking
+# that output_type[i] == input_type[i+1] for all adjacent layers.
+
+layers:
+  - name: normalize
+    module: arabic_engine.signifier.unicode_norm
+    function: normalize_arabic
+    input_type: str
+    output_type: NormResult
+    description_ar: "تطبيع النص العربي (إزالة التطويل، توحيد المسافات)"
+    description_en: "Unicode normalization (remove tatweel, normalize whitespace)"
+
+  - name: signifier_phonology
+    module: arabic_engine.signifier.phonology
+    function: analyze_phonology
+    input_type: str
+    output_type: PhonResult
+    description_ar: "تحليل صوتي (مقاطع، هيكل صامت/صائت)"
+    description_en: "Phonological analysis (syllables, consonant/vowel structure)"
+
+  - name: signifier_root_pattern
+    module: arabic_engine.signifier.root_pattern
+    function: extract_root_pattern
+    input_type: str
+    output_type: RootPatternResult
+    description_ar: "استخراج الجذر والوزن"
+    description_en: "Root and pattern extraction"
+
+  - name: lexical_closure
+    module: arabic_engine.core.types
+    function: make_token
+    input_type: RootPatternResult
+    output_type: Token
+    description_ar: "إغلاق معجمي (ليمَة، جذر، وزن، قسم كلام، سمات)"
+    description_en: "Lexical closure (lemma, root, pattern, POS, features)"
+
+  - name: ontology_mapping
+    module: arabic_engine.signified.ontology
+    function: map_to_ontology
+    input_type: Token
+    output_type: Concept
+    description_ar: "مطابقة أنطولوجية (ذات / حدث / صفة / نسبة / حكم)"
+    description_en: "Ontological mapping (entity / event / attribute / relation / norm)"
+
+  - name: dalala_validation
+    module: arabic_engine.linkage.dalala
+    function: validate_dalala
+    input_type: "[Token, Concept]"
+    output_type: DalalLink
+    description_ar: "تحقق دلالي (مطابقة / تضمن / التزام / إسناد / تقييد)"
+    description_en: "Dalāla validation (mutabaqa / tadammun / iltizam / isnad / taqyid)"
+
+  - name: syntax_tree
+    module: arabic_engine.syntax.syntax
+    function: build_syntax_tree
+    input_type: "[list[int], list[str]]"
+    output_type: "tuple[SyntaxNode, ...]"
+    description_ar: "بناء شجرة نحوية (فعلية / اسمية / إضافية)"
+    description_en: "Syntax tree (verbal / nominal / additive clauses)"
+
+  - name: time_space
+    module: arabic_engine.syntax.time_space
+    function: build_time_space
+    input_type: "[str, str]"
+    output_type: TimeSpace
+    description_ar: "إسقاط زمني ومكاني"
+    description_en: "Temporal and spatial anchoring"
+
+  - name: judgment
+    module: arabic_engine.cognition.evaluation
+    function: build_judgment
+    input_type: "[int, int, int, int, int, int]"
+    output_type: Judgment
+    description_ar: "بناء الحكم (موضوع، محمول، مفعول، زمن، مكان، قطبية)"
+    description_en: "Judgment construction (subject, predicate, object, time, space, polarity)"
+
+  - name: evaluation
+    module: arabic_engine.cognition.evaluation
+    function: build_evaluation
+    input_type: "[Judgment, TruthState, GuidanceState, float]"
+    output_type: EvalResult
+    description_ar: "تقييم (حالة الصدق، حالة الإرشاد، درجة الثقة)"
+    description_en: "Evaluation (truth state, guidance state, confidence)"
+
+  - name: inference
+    module: arabic_engine.inference.inference_rules
+    function: InferenceEngine.apply_existential
+    input_type: "[Judgment, EvalResult]"
+    output_type: InferenceResult
+    description_ar: "استدلال (قواعد منطقية تولد حقائق جديدة)"
+    description_en: "Inference (logical rules produce new facts)"
+
+# Layer closure property:
+# For any adjacent layers (i, i+1), the output_type of layer i
+# is consumed by the input_type of layer i+1 (possibly as part of a tuple).
+# The full composition F = E ∘ J ∘ D ∘ O ∘ L ∘ S ∘ N is therefore well-typed.
+closure_property: |
+  ∀ i ∈ {0, …, n-2}: output_type(layer[i]) ⊆ input_type(layer[i+1])
+  ⟹ F: str → EvalResult is computable

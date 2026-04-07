@@ -1,0 +1,244 @@
+[
+  {
+    "id": "gold_021",
+    "text": "وبالكتابِ",
+    "annotations": {
+      "tokens": [
+        {"text": "و", "normalized": "و", "start": 0, "end": 1},
+        {"text": "ب", "normalized": "ب", "start": 1, "end": 2},
+        {"text": "الكتابِ", "normalized": "الكتاب", "start": 2, "end": 8, "root": ["ك","ت","ب"]}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Multi-prefix: و + ب + الكتاب"
+  },
+  {
+    "id": "gold_022",
+    "text": "كتابهم",
+    "annotations": {
+      "tokens": [
+        {"text": "كتاب", "normalized": "كتاب", "start": 0, "end": 4, "root": ["ك","ت","ب"]},
+        {"text": "هم", "normalized": "هم", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "POSSESSOR"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Possessive suffix — their book"
+  },
+  {
+    "id": "gold_023",
+    "text": "فكتبنا",
+    "annotations": {
+      "tokens": [
+        {"text": "ف", "normalized": "ف", "start": 0, "end": 1},
+        {"text": "كتب", "normalized": "كتب", "start": 1, "end": 4, "root": ["ك","ت","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "نا", "normalized": "نا", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ف + stem + suffix نا"
+  },
+  {
+    "id": "gold_024",
+    "text": "بالحق",
+    "annotations": {
+      "tokens": [
+        {"text": "ب", "normalized": "ب", "start": 0, "end": 1},
+        {"text": "الحق", "normalized": "الحق", "start": 1, "end": 5, "root": ["ح","ق","ق"]}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ب + definite noun"
+  },
+  {
+    "id": "gold_025",
+    "text": "وكتبها",
+    "annotations": {
+      "tokens": [
+        {"text": "و", "normalized": "و", "start": 0, "end": 1},
+        {"text": "كتب", "normalized": "كتب", "start": 1, "end": 4, "root": ["ك","ت","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "ها", "normalized": "ها", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix و + stem + suffix ها"
+  },
+  {
+    "id": "gold_026",
+    "text": "للعلمِ",
+    "annotations": {
+      "tokens": [
+        {"text": "ل", "normalized": "ل", "start": 0, "end": 1},
+        {"text": "العلمِ", "normalized": "العلم", "start": 1, "end": 6, "root": ["ع","ل","م"]}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ل + definite noun"
+  },
+  {
+    "id": "gold_027",
+    "text": "ولكتابهم",
+    "annotations": {
+      "tokens": [
+        {"text": "و", "normalized": "و", "start": 0, "end": 1},
+        {"text": "ل", "normalized": "ل", "start": 1, "end": 2},
+        {"text": "كتاب", "normalized": "كتاب", "start": 2, "end": 6, "root": ["ك","ت","ب"]},
+        {"text": "هم", "normalized": "هم", "start": 6, "end": 8}
+      ],
+      "relations": [
+        {"head": 2, "dep": 3, "role": "POSSESSOR"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Multi-prefix + suffix: و + ل + كتاب + هم"
+  },
+  {
+    "id": "gold_028",
+    "text": "سنكتبها",
+    "annotations": {
+      "tokens": [
+        {"text": "س", "normalized": "س", "start": 0, "end": 1},
+        {"text": "نكتب", "normalized": "نكتب", "start": 1, "end": 5, "root": ["ك","ت","ب"]},
+        {"text": "ها", "normalized": "ها", "start": 5, "end": 7}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Future prefix س + imperfect + suffix ها"
+  },
+  {
+    "id": "gold_029",
+    "text": "بكتابك",
+    "annotations": {
+      "tokens": [
+        {"text": "ب", "normalized": "ب", "start": 0, "end": 1},
+        {"text": "كتاب", "normalized": "كتاب", "start": 1, "end": 5, "root": ["ك","ت","ب"]},
+        {"text": "ك", "normalized": "ك", "start": 5, "end": 6}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "POSSESSOR"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ب + stem + suffix ك (your)"
+  },
+  {
+    "id": "gold_030",
+    "text": "فذهبنا",
+    "annotations": {
+      "tokens": [
+        {"text": "ف", "normalized": "ف", "start": 0, "end": 1},
+        {"text": "ذهب", "normalized": "ذهب", "start": 1, "end": 4, "root": ["ذ","ه","ب"], "pattern": "فَعَلَ", "event_type": "ACTION"},
+        {"text": "نا", "normalized": "نا", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "AGENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ف + stem + suffix نا — so we went"
+  },
+  {
+    "id": "gold_031",
+    "text": "أعلمهم",
+    "annotations": {
+      "tokens": [
+        {"text": "أعلم", "normalized": "اعلم", "start": 0, "end": 4, "root": ["ع","ل","م"]},
+        {"text": "هم", "normalized": "هم", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "PATIENT"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Elative/comparative with suffix"
+  },
+  {
+    "id": "gold_032",
+    "text": "كتابي",
+    "annotations": {
+      "tokens": [
+        {"text": "كتاب", "normalized": "كتاب", "start": 0, "end": 4, "root": ["ك","ت","ب"]},
+        {"text": "ي", "normalized": "ي", "start": 4, "end": 5}
+      ],
+      "relations": [
+        {"head": 0, "dep": 1, "role": "POSSESSOR"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Possessive — my book"
+  },
+  {
+    "id": "gold_033",
+    "text": "وللهِ",
+    "annotations": {
+      "tokens": [
+        {"text": "و", "normalized": "و", "start": 0, "end": 1},
+        {"text": "للهِ", "normalized": "لله", "start": 1, "end": 4}
+      ],
+      "relations": [],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix و + ل + الله — and for Allah"
+  },
+  {
+    "id": "gold_034",
+    "text": "فعلمنا",
+    "annotations": {
+      "tokens": [
+        {"text": "ف", "normalized": "ف", "start": 0, "end": 1},
+        {"text": "علم", "normalized": "علم", "start": 1, "end": 4, "root": ["ع","ل","م"], "pattern": "فَعِلَ", "event_type": "STATE"},
+        {"text": "نا", "normalized": "نا", "start": 4, "end": 6}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "EXPERIENCER"}
+      ],
+      "classification": {"type": "خبر", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Prefix ف + state verb + suffix نا"
+  },
+  {
+    "id": "gold_035",
+    "text": "لنكتبها",
+    "annotations": {
+      "tokens": [
+        {"text": "ل", "normalized": "ل", "start": 0, "end": 1},
+        {"text": "نكتب", "normalized": "نكتب", "start": 1, "end": 5, "root": ["ك","ت","ب"]},
+        {"text": "ها", "normalized": "ها", "start": 5, "end": 7}
+      ],
+      "relations": [
+        {"head": 1, "dep": 2, "role": "PATIENT"}
+      ],
+      "classification": {"type": "إنشاء", "strength": "قطعي"}
+    },
+    "annotator": "manual",
+    "notes": "Lam al-amr + imperfect + suffix — let us write it"
+  }
+]

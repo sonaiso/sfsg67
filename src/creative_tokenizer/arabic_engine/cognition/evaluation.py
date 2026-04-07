@@ -18,7 +18,9 @@ from ..core.enums import GuidanceState, TruthState
 
 __all__ = [
     "EvalResult",
+    "GuidanceState",
     "Judgment",
+    "TruthState",
     "build_evaluation",
     "build_judgment",
 ]

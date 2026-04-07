@@ -24,6 +24,9 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
+linguistics = []   # no extra deps — activates linguistics sub-package imports
+knowledge = []     # no extra deps — activates knowledge sub-package imports
+all = ["creative-tokenizer[linguistics,knowledge]"]
 dev = [
   "mypy>=1.11",
   "pytest>=8.0",

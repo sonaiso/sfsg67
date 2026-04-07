@@ -1,0 +1,220 @@
+{
+  "_comment": "Hand-curated root lexicon — maps consonantal skeletons to roots and default patterns/events.",
+  "كتب": {
+    "root": ["ك", "ت", "ب"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فِعَال",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "قرا": {
+    "root": ["ق", "ر", "ا"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فِعَالَة",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "علم": {
+    "root": ["ع", "ل", "م"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فِعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "ذهب": {
+    "root": ["ذ", "ه", "ب"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعَاب",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "جلس": {
+    "root": ["ج", "ل", "س"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعُول",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "اكل": {
+    "root": ["ا", "ك", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "شرب": {
+    "root": ["ش", "ر", "ب"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فُعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "فتح": {
+    "root": ["ف", "ت", "ح"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَتْح",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "خرج": {
+    "root": ["خ", "ر", "ج"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعُول",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "دخل": {
+    "root": ["د", "خ", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعُول",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "نصر": {
+    "root": ["ن", "ص", "ر"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "ضرب": {
+    "root": ["ض", "ر", "ب"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "سمع": {
+    "root": ["س", "م", "ع"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "نظر": {
+    "root": ["ن", "ظ", "ر"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "حكم": {
+    "root": ["ح", "ك", "م"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "عمل": {
+    "root": ["ع", "م", "ل"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فَعَل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "طلب": {
+    "root": ["ط", "ل", "ب"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعَل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "درس": {
+    "root": ["د", "ر", "س"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "وجد": {
+    "root": ["و", "ج", "د"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "قال": {
+    "root": ["ق", "و", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "جعل": {
+    "root": ["ج", "ع", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "DITRANSITIVE"
+  },
+  "وصل": {
+    "root": ["و", "ص", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعُول",
+    "event_type": "ACTION",
+    "transitivity": "INTRANSITIVE"
+  },
+  "بدا": {
+    "root": ["ب", "د", "ا"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "INTRANSITIVE"
+  },
+  "حسب": {
+    "root": ["ح", "س", "ب"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فِعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "فعل": {
+    "root": ["ف", "ع", "ل"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فِعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "امر": {
+    "root": ["ا", "م", "ر"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "حمد": {
+    "root": ["ح", "م", "د"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "رحم": {
+    "root": ["ر", "ح", "م"],
+    "default_verb_pattern": "فَعِلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "ملك": {
+    "root": ["م", "ل", "ك"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فَعْل",
+    "event_type": "STATE",
+    "transitivity": "TRANSITIVE"
+  },
+  "عبد": {
+    "root": ["ع", "ب", "د"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فِعَادَة",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  },
+  "هدي": {
+    "root": ["ه", "د", "ي"],
+    "default_verb_pattern": "فَعَلَ",
+    "default_noun_pattern": "فُعْل",
+    "event_type": "ACTION",
+    "transitivity": "TRANSITIVE"
+  }
+}

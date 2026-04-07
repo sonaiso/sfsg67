@@ -395,10 +395,19 @@ class TestRelationTag:
 
 class TestArabicRegression:
     def test_all_named_diacritics_classified(self) -> None:
-        """Every diacritic in _ARABIC_DIACRITICS must be classified as layer=2."""
-        from creative_tokenizer.morphology.unicode_value import _ARABIC_DIACRITICS
-
-        for cp in _ARABIC_DIACRITICS:
+        """Every core Arabic diacritic must be classified as layer=2."""
+        diacritic_cps = [
+            0x064E,
+            0x064F,
+            0x0650,
+            0x0652,
+            0x0651,
+            0x064B,
+            0x064C,
+            0x064D,
+            0x0670,
+        ]
+        for cp in diacritic_cps:
             ch = chr(cp)
             fields = unpack_unicode_value(unicode_value(ch))
             assert fields.arabic_layer == 2, f"U+{cp:04X} not classified as diacritic"

@@ -29,6 +29,9 @@ from dataclasses import dataclass
 # Arabic code-point sets  (reused from normalization / grapheme_atoms)
 # ---------------------------------------------------------------------------
 
+#: Core Arabic diacritical marks with their conventional names.
+#: Used to classify characters into the diacritic layer (arabic_layer == 2,
+#: phonological == 2, morphological == 2, relational == 1).
 _ARABIC_DIACRITICS: dict[int, str] = {
     0x064E: "FATHA",
     0x064F: "DAMMA",
@@ -41,6 +44,9 @@ _ARABIC_DIACRITICS: dict[int, str] = {
     0x0670: "DAGGER_ALIF",
 }
 
+#: Arabic letter code points: the core range U+0621–U+064A plus
+#: commonly needed extended letters (alef wasla ٱ, peh پ, tcheh چ,
+#: veh ڤ, gaf گ).
 _ARABIC_LETTERS: frozenset[int] = frozenset(range(0x0621, 0x064B)) | frozenset(
     {0x0671, 0x067E, 0x0686, 0x06A4, 0x06AF}
 )

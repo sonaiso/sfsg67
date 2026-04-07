@@ -80,14 +80,13 @@ def _make_cluster(base: str, marks: tuple[str, ...]) -> GraphemeCluster:
 
 
 def _make_syllable(onset: str, nucleus: str, coda: str) -> Syllable:
-    if coda and nucleus and (nucleus in _VOWEL_LONG or ord(nucleus) in _VOWEL_SHORT):
-        weight = 2
-    elif nucleus in _VOWEL_LONG:
-        weight = 2
-    elif coda:
-        weight = 2
-    else:
-        weight = 1
+    # Light (CV with short vowel, no coda) → weight 1; everything else → weight 2
+    is_light = (
+        not coda
+        and nucleus
+        and nucleus not in _VOWEL_LONG
+    )
+    weight = 1 if is_light else 2
     sid = fractal_fold([
         cantor_pair(1, ord(onset) if onset else 0),
         cantor_pair(2, ord(nucleus) if nucleus else 0),

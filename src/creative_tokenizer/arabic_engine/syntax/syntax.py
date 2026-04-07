@@ -74,6 +74,9 @@ def _make_syntax_node(
     )
 
 
+_NOMINAL_POS: frozenset[str] = frozenset({"noun", "unknown"})
+
+
 def _assign_roles(pos_tags: list[str]) -> list[SyntaxRole]:
     """Heuristic role assignment from POS sequence.
 
@@ -82,17 +85,16 @@ def _assign_roles(pos_tags: list[str]) -> list[SyntaxRole]:
     roles: list[SyntaxRole] = []
     verb_seen = False
     subject_seen = False
-    nominal = {"noun", "unknown"}  # treat unknown POS as nominal
     for pos in pos_tags:
         if pos == "verb" and not verb_seen:
             roles.append(SyntaxRole.VERB)
             verb_seen = True
-        elif pos in nominal and verb_seen and not subject_seen:
+        elif pos in _NOMINAL_POS and verb_seen and not subject_seen:
             roles.append(SyntaxRole.SUBJECT)
             subject_seen = True
-        elif pos in nominal and verb_seen and subject_seen:
+        elif pos in _NOMINAL_POS and verb_seen and subject_seen:
             roles.append(SyntaxRole.OBJECT)
-        elif pos in nominal:
+        elif pos in _NOMINAL_POS:
             roles.append(SyntaxRole.TOPIC)
         elif pos == "adj":
             roles.append(SyntaxRole.ADJECTIVE)

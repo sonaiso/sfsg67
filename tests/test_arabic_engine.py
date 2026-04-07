@@ -640,8 +640,14 @@ class TestPipeline:
 
     def test_arabic_comma_in_input(self) -> None:
         """Arabic comma (،) should not break the pipeline."""
-        result = run_pipeline("كَتَبَ، زَيْدٌ")
+        text = "كَتَبَ، زَيْدٌ"
+        result = run_pipeline(text)
         assert len(result.words) >= 2
+        # Comma should be preserved in normalized output
+        assert "،" in result.normalized.text
+        # Spans must still index the original
+        for w in result.words:
+            assert text[w.token.span[0]:w.token.span[1]] == w.surface
 
 
 # ═══════════════════════════════════════════════════════════════════════

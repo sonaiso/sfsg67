@@ -114,10 +114,13 @@ def run_pipeline(
         phon = analyze_phonology(surface)
         rp = extract_root_pattern(surface)
 
+        # Per-word normalization for the token
+        word_norm = normalize_arabic(surface)
+
         # Lexical closure
         tok = make_token(
             surface=surface,
-            normalized=norm.text,
+            normalized=word_norm.text,
             lemma=rp.lemma,
             root=rp.root,
             pattern=rp.pattern,
@@ -134,7 +137,7 @@ def run_pipeline(
 
         analyses.append(WordAnalysis(
             surface=surface,
-            norm=norm.text,
+            norm=word_norm.text,
             phonology=phon,
             root_pattern=rp,
             token=tok,

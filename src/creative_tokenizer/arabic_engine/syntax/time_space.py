@@ -55,12 +55,16 @@ class TimeSpace:
     ts_id: int
 
 
+_PAST_PREFIXES = ("فَعَلَ", "فَعِلَ", "فَعُلَ")
+_PRESENT_PREFIXES = ("يَفْعَلُ", "يَفْعِلُ")
+
+
 def _infer_time(pos: str, pattern: str) -> TimeAnchor:
     """Infer temporal anchor from POS and pattern heuristics."""
     if pos == "verb":
-        if pattern.startswith("فَعَلَ") or pattern.startswith("فَعِلَ") or pattern.startswith("فَعُلَ"):
+        if pattern.startswith(_PAST_PREFIXES):
             return TimeAnchor.PAST
-        if pattern.startswith("يَفْعَلُ") or pattern.startswith("يَفْعِلُ"):
+        if pattern.startswith(_PRESENT_PREFIXES):
             return TimeAnchor.PRESENT
     return TimeAnchor.TIMELESS
 

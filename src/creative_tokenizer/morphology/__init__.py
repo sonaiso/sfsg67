@@ -35,6 +35,13 @@ from .contract_function import (
     contract_function,
 )
 from .epistemic_hub import EpistemicMode, epistemic_mode_id
+from .epistemic_principles import (
+    EPISTEMIC_PRINCIPLES,
+    EpistemicPrinciple,
+    PrincipleIndex,
+    all_principles,
+    epistemic_principle,
+)
 from .event_layer import (
     Agency,
     Aspect,
@@ -255,6 +262,30 @@ from .unicode_value import (
     compose,
     unicode_value,
     unpack_unicode_value,
+)
+from .upper_ontology import (
+    GOVERNING_CONSTRAINTS,
+    MACRO_LAYERS,
+    UPPER_NODES,
+    UPPER_TRANSITIONS,
+    ChainMode,
+    ConstraintIndex,
+    GoverningConstraint,
+    MacroLayer,
+    MacroLayerIndex,
+    NodeIndex,
+    Transition,
+    TransitionKind,
+    all_constraints,
+    all_macro_layers,
+    all_transitions,
+    all_upper_nodes,
+    chain_identity,
+    governing_constraint,
+    is_circular,
+    macro_layer,
+    transition_for,
+    upper_node,
 )
 from .word_identity import WordIdentity, compute_word_identity
 
@@ -526,4 +557,32 @@ __all__ = [
     "chain_id",
     "formal_layer",
     "generative_chain",
+    # Upper ontology — top-level nodes, layers, transitions, constraints
+    "ChainMode",
+    "ConstraintIndex",
+    "EPISTEMIC_PRINCIPLES",
+    "EpistemicPrinciple",
+    "GOVERNING_CONSTRAINTS",
+    "GoverningConstraint",
+    "MACRO_LAYERS",
+    "MacroLayer",
+    "MacroLayerIndex",
+    "NodeIndex",
+    "PrincipleIndex",
+    "Transition",
+    "TransitionKind",
+    "UPPER_NODES",
+    "UPPER_TRANSITIONS",
+    "all_constraints",
+    "all_macro_layers",
+    "all_principles",
+    "all_transitions",
+    "all_upper_nodes",
+    "chain_identity",
+    "epistemic_principle",
+    "governing_constraint",
+    "is_circular",
+    "macro_layer",
+    "transition_for",
+    "upper_node",
 ]

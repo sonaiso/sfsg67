@@ -147,6 +147,14 @@ from .transfer_sense import TransferNode, TransferType, make_transfer
 from .triple_semantic import iltizam_id, triple_semantic_envelope
 from .typed_relation import EdgeType, TypedEdge, make_edge
 from .unicode_identity import unicode_surface
+from .unicode_value import (
+    DEFAULT_PRIME,
+    RelationTag,
+    UnicodeValueFields,
+    compose,
+    unicode_value,
+    unpack_unicode_value,
+)
 from .word_identity import WordIdentity, compute_word_identity
 
 __all__ = [
@@ -319,5 +327,12 @@ __all__ = [
     "layer",
     "make_explained_retrieval",
     "make_qiyas",
+    # Phase 10 – composite interpretive Unicode value
+    "DEFAULT_PRIME",
+    "RelationTag",
+    "UnicodeValueFields",
+    "compose",
+    "unicode_value",
+    "unpack_unicode_value",
 ]
 

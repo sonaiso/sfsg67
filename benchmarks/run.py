@@ -23,9 +23,9 @@ import time
 sys.path.insert(0, "src")
 
 from creative_tokenizer import BpeTrainer, CreativeTokenizer, Token  # noqa: E402
+from creative_tokenizer.bpe_tokenizer import BpeTokenizer  # noqa: E402
 from creative_tokenizer.trainer.unigram import UnigramTrainer  # noqa: E402
 from creative_tokenizer.unigram_tokenizer import UnigramTokenizer  # noqa: E402
-from creative_tokenizer.bpe_tokenizer import BpeTokenizer  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Fixed benchmark corpus — representative Arabic text

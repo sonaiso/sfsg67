@@ -1,0 +1,57 @@
+[
+  {
+    "id": "basic_diacritics",
+    "description": "Simple Arabic sentence with diacritics — normalization removes tashkeel",
+    "text": "ذَهَبَ الطَّالِبُ إِلَى المَدْرَسَةِ",
+    "expected_no_clitics": {
+      "normalized": ["ذهب", "الطالب", "الي", "المدرسه"]
+    },
+    "expected_with_clitics": {
+      "normalized": ["ذهب", "الطالب", "ال", "ي", "المدرس", "ه"]
+    }
+  },
+  {
+    "id": "clitic_prefixes_and_suffixes",
+    "description": "Clitic-heavy sentence with prefixes و ب and suffix نا ها",
+    "text": "وبالكتاب ذهبنا وكتبها",
+    "expected_no_clitics": {
+      "normalized": ["وبالكتاب", "ذهبنا", "وكتبها"]
+    },
+    "expected_with_clitics": {
+      "normalized": ["و", "ب", "الكتاب", "ذهب", "نا", "و", "ك", "تب", "ها"]
+    }
+  },
+  {
+    "id": "punctuation_mix",
+    "description": "Sentence with Arabic comma, Arabic question mark, and Latin punctuation",
+    "text": "مرحبا، كيف حالك؟ أنا بخير!",
+    "expected_no_clitics": {
+      "normalized": ["مرحبا", "،", "كيف", "حالك", "؟", "انا", "بخير", "!"]
+    },
+    "expected_with_clitics": {
+      "normalized": ["مرحبا", "،", "ك", "يف", "حال", "ك", "؟", "انا", "ب", "خير", "!"]
+    }
+  },
+  {
+    "id": "mixed_script",
+    "description": "Mixed Arabic/Latin text with Western numerals",
+    "text": "قرأتُ كتاب Python3 عن NLP في 2024",
+    "expected_no_clitics": {
+      "normalized": ["قرات", "كتاب", "Python3", "عن", "NLP", "في", "2024"]
+    },
+    "expected_with_clitics": {
+      "normalized": ["قرات", "ك", "تاب", "Python3", "عن", "NLP", "في", "2024"]
+    }
+  },
+  {
+    "id": "hamza_normalization",
+    "description": "Words with various hamza forms — أ إ آ ؤ ئ all normalized",
+    "text": "أحمد وإبراهيم وآمنة وأسئلة",
+    "expected_no_clitics": {
+      "normalized": ["احمد", "وابراهيم", "وامنه", "واسيله"]
+    },
+    "expected_with_clitics": {
+      "normalized": ["احمد", "و", "ابراهيم", "و", "امن", "ه", "و", "اسيل", "ه"]
+    }
+  }
+]

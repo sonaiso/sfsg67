@@ -28,3 +28,68 @@ def test_pretokenize_mapping_skips_diacritic_positions() -> None:
     assert len(pretokens) == 1
     assert pretokens[0].word == "كتاب"
     assert pretokens[0].mapping == (0, 2, 4, 5)
+
+
+# ---- Punctuation & mixed-script coverage ----
+
+
+def test_pretokenize_arabic_question_mark() -> None:
+    pretokens = pretokenize("ماذا؟")
+    words = [pt.word for pt in pretokens]
+    assert words == ["ماذا", "؟"]
+
+
+def test_pretokenize_arabic_semicolon() -> None:
+    pretokens = pretokenize("قال؛ ذهب")
+    words = [pt.word for pt in pretokens]
+    assert words == ["قال", "؛", "ذهب"]
+
+
+def test_pretokenize_sequential_punctuation() -> None:
+    pretokens = pretokenize("!!؟")
+    words = [pt.word for pt in pretokens]
+    assert words == ["!", "!", "؟"]
+
+
+def test_pretokenize_arabic_indic_digits() -> None:
+    pretokens = pretokenize("عام ٢٠٢٤")
+    words = [pt.word for pt in pretokens]
+    assert words == ["عام", "٢٠٢٤"]
+
+
+def test_pretokenize_mixed_arabic_latin_sentence() -> None:
+    pretokens = pretokenize("لغة Python جميلة")
+    words = [pt.word for pt in pretokens]
+    assert words == ["لغه", "Python", "جميله"]
+
+
+def test_pretokenize_latin_with_numbers() -> None:
+    pretokens = pretokenize("Python3")
+    assert len(pretokens) == 1
+    assert pretokens[0].word == "Python3"
+
+
+def test_pretokenize_arabic_comma_between_words() -> None:
+    pretokens = pretokenize("أحمد، علي")
+    words = [pt.word for pt in pretokens]
+    assert words == ["احمد", "،", "علي"]
+
+
+def test_pretokenize_mixed_digits_western_and_indic() -> None:
+    pretokens = pretokenize("2024 و ٢٠٢٤")
+    words = [pt.word for pt in pretokens]
+    assert words == ["2024", "و", "٢٠٢٤"]
+
+
+def test_pretokenize_empty_string() -> None:
+    assert pretokenize("") == []
+
+
+def test_pretokenize_only_whitespace() -> None:
+    assert pretokenize("   ") == []
+
+
+def test_pretokenize_tatweel_removed_from_word() -> None:
+    pretokens = pretokenize("كـتـاب")
+    assert len(pretokens) == 1
+    assert pretokens[0].word == "كتاب"

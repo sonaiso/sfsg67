@@ -1,3 +1,11 @@
+from .augmentation import (
+    AUGMENTATION_LETTERS,
+    Augmentation,
+    AugmentRole,
+    augmentation_id,
+    is_augmentation_letter,
+    make_augmentation,
+)
 from .base_class import BaseClass, base_class_id
 from .bayan_record import BayanRecord, make_bayan
 from .carrier_layer import CarrierTag, carrier_layer_id
@@ -27,6 +35,20 @@ from .contract_function import (
     contract_function,
 )
 from .epistemic_hub import EpistemicMode, epistemic_mode_id
+from .event_layer import (
+    Agency,
+    Aspect,
+    Event,
+    EventCount,
+    EventDefiniteness,
+    EventGender,
+    EventType,
+    Tense,
+    Transitivity,
+    event_id,
+    phi_event,
+    phi_event_id,
+)
 from .exact_decimal import (
     READY_FULL,
     READY_HIGH,
@@ -44,6 +66,20 @@ from .example_record import (
 )
 from .explained_retrieval import ExplainedRetrievalResult, make_explained_retrieval
 from .factor_system import NounFactorTag, ParticleFactorTag, VerbFactorTag, factor_system
+from .formal_chain import (
+    ANALYTIC_CHAIN,
+    FORMAL_CHAIN,
+    GENERATIVE_CHAIN,
+    ChainDirection,
+    ChainStep,
+    FormalLayer,
+    LayerIndex,
+    all_formal_layers,
+    analytic_chain,
+    chain_id,
+    formal_layer,
+    generative_chain,
+)
 from .fractal_storage import cantor_pair, fractal_fold, invert_cantor_pair, phi
 from .generation_template import GenerationPurpose, GenerationTemplate, make_template
 from .graph_node import GraphNode, is_dag_valid, make_graph_node
@@ -95,6 +131,45 @@ from .morph_family import (
 )
 from .nucleus import NucleusId, NucleusLayer, all_layers, layer
 from .ontology_hub import DomainHub, OntologyCategory, OntologyNode, make_ontology_node
+from .particle_sets import (
+    CONDITIONALS,
+    CONJUNCTIONS,
+    INTERROGATIVES,
+    NASIKHAAT,
+    NEGATIONS,
+    PREPOSITIONS,
+    VOCATIVES,
+    Particle,
+    ParticleKind,
+    make_particle,
+    particle_id,
+)
+from .phonological_sets import (
+    ALL_VOWELS,
+    CONSONANT_AUGMENT,
+    CONSONANT_FUNC,
+    CONSONANT_ROOT,
+    DIACRITIC_MARKS,
+    VOWEL_LONG,
+    VOWEL_NULL,
+    VOWEL_SHORT,
+    VOWEL_TANWEEN,
+    ConsonantRole,
+    DiacriticKind,
+    DiacriticRole,
+    PlaceOfArticulation,
+    VowelKind,
+    VowelRole,
+    consonant_role,
+    consonant_set_id,
+    diacritic_kind,
+    diacritic_roles,
+    phonological_layer_id,
+    place_of_articulation,
+    vowel_kind,
+    vowel_roles,
+    vowel_set_id,
+)
 from .pre_compositional import PreCompositionalValue, compute_pre_compositional
 from .qiyas_layer import IllaMatchStrength, QiyasNode, QiyasType, make_qiyas
 from .readiness import full_readiness, partial_readiness, readiness_envelope
@@ -117,6 +192,25 @@ from .relational_container import (
     RelationalType,
     RelativeTag,
     relational_container,
+)
+from .root_pattern import (
+    MAZEED_PATTERNS,
+    MUJARRAD_PATTERNS,
+    NounPatternKind,
+    Pattern,
+    PatternDomain,
+    Root,
+    RootKind,
+    VerbPatternKind,
+    make_noun_pattern,
+    make_root,
+    make_verb_pattern,
+)
+from .root_pattern import (
+    pattern_id as morpho_pattern_id,
+)
+from .root_pattern import (
+    root_id as morpho_root_id,
 )
 from .semantic_envelope import FeatureTag, semantic_envelope
 from .semantic_functions import (
@@ -141,6 +235,13 @@ from .style_hub import (
     StyleHub,
     StyleType,
     make_style_hub,
+)
+from .syllable_layer import (
+    Syllable,
+    SyllableShape,
+    build_syllable,
+    detect_shape,
+    syllable_id,
 )
 from .trace_record import TraceRecord, make_trace
 from .transfer_sense import TransferNode, TransferType, make_transfer
@@ -334,5 +435,95 @@ __all__ = [
     "compose",
     "unicode_value",
     "unpack_unicode_value",
+    # Phase 11 – formal hierarchical layer system (§1–§18)
+    # Phonological sets (§2)
+    "ALL_VOWELS",
+    "CONSONANT_AUGMENT",
+    "CONSONANT_FUNC",
+    "CONSONANT_ROOT",
+    "ConsonantRole",
+    "DIACRITIC_MARKS",
+    "DiacriticKind",
+    "DiacriticRole",
+    "PlaceOfArticulation",
+    "VOWEL_LONG",
+    "VOWEL_NULL",
+    "VOWEL_SHORT",
+    "VOWEL_TANWEEN",
+    "VowelKind",
+    "VowelRole",
+    "consonant_role",
+    "consonant_set_id",
+    "diacritic_kind",
+    "diacritic_roles",
+    "phonological_layer_id",
+    "place_of_articulation",
+    "vowel_kind",
+    "vowel_roles",
+    "vowel_set_id",
+    # Syllable layer (§4)
+    "Syllable",
+    "SyllableShape",
+    "build_syllable",
+    "detect_shape",
+    "syllable_id",
+    # Root and pattern (§5–6)
+    "MAZEED_PATTERNS",
+    "MUJARRAD_PATTERNS",
+    "NounPatternKind",
+    "Pattern",
+    "PatternDomain",
+    "Root",
+    "RootKind",
+    "VerbPatternKind",
+    "make_noun_pattern",
+    "make_root",
+    "make_verb_pattern",
+    "morpho_pattern_id",
+    "morpho_root_id",
+    # Event layer (§7)
+    "Agency",
+    "Aspect",
+    "Event",
+    "EventCount",
+    "EventDefiniteness",
+    "EventGender",
+    "EventType",
+    "Tense",
+    "Transitivity",
+    "event_id",
+    "phi_event",
+    "phi_event_id",
+    # Particle sets (§9)
+    "CONDITIONALS",
+    "CONJUNCTIONS",
+    "INTERROGATIVES",
+    "NASIKHAAT",
+    "NEGATIONS",
+    "PREPOSITIONS",
+    "Particle",
+    "ParticleKind",
+    "VOCATIVES",
+    "make_particle",
+    "particle_id",
+    # Augmentation (§10)
+    "AUGMENTATION_LETTERS",
+    "AugmentRole",
+    "Augmentation",
+    "augmentation_id",
+    "is_augmentation_letter",
+    "make_augmentation",
+    # Formal chain (§16–17)
+    "ANALYTIC_CHAIN",
+    "FORMAL_CHAIN",
+    "GENERATIVE_CHAIN",
+    "ChainDirection",
+    "ChainStep",
+    "FormalLayer",
+    "LayerIndex",
+    "all_formal_layers",
+    "analytic_chain",
+    "chain_id",
+    "formal_layer",
+    "generative_chain",
 ]
-

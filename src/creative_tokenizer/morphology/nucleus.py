@@ -23,23 +23,23 @@ from .fractal_storage import cantor_pair, fractal_fold
 
 
 class NucleusId(IntEnum):
-    IDRAK = 1           # نواة الإدراك       — perception / raw identity
-    RABT = 2            # نواة الربط         — binding / structural assembly
-    CONCEPT_GEN = 3     # نواة توليد المفهوم  — concept generation
+    IDRAK = 1  # نواة الإدراك       — perception / raw identity
+    RABT = 2  # نواة الربط         — binding / structural assembly
+    CONCEPT_GEN = 3  # نواة توليد المفهوم  — concept generation
     CONCEPT_PROLIF = 4  # نواة توالد المفاهيم — concept proliferation
-    TRACE_MEMORY = 5    # ذاكرة الأثر        — trace / corpus stores
-    RETRIEVAL = 6       # الاسترجاع المفسر   — explained retrieval
-    QIYAS = 7           # القياس             — analogy / inference
-    HUKM = 8            # الحكم              — judgment (future)
+    TRACE_MEMORY = 5  # ذاكرة الأثر        — trace / corpus stores
+    RETRIEVAL = 6  # الاسترجاع المفسر   — explained retrieval
+    QIYAS = 7  # القياس             — analogy / inference
+    HUKM = 8  # الحكم              — judgment (future)
 
 
 @dataclass(frozen=True, slots=True)
 class NucleusLayer:
     nucleus_id: NucleusId
-    label: str                    # human-readable Arabic label
+    label: str  # human-readable Arabic label
     module_names: tuple[str, ...]  # Python module basenames
-    hub_types: tuple[str, ...]     # hub/container type names used
-    layer_id: int                  # F(nucleus_id, fold(hash of module names))
+    hub_types: tuple[str, ...]  # hub/container type names used
+    layer_id: int  # F(nucleus_id, fold(hash of module names))
 
 
 def _layer_id(nucleus_id: NucleusId, module_names: tuple[str, ...]) -> int:
@@ -70,8 +70,8 @@ def _reg(
 _reg(
     NucleusId.IDRAK,
     "نواة الإدراك",
-    ("unicode_identity", "grapheme_atoms"),
-    ("UnicodeAtom",),
+    ("unicode_identity", "grapheme_atoms", "phonological_sets", "syllable_layer"),
+    ("UnicodeAtom", "PhonologicalSet", "Syllable"),
 )
 
 _reg(
@@ -85,8 +85,24 @@ _reg(
         "inflectional_state",
         "base_class",
         "lexical_nature",
+        "root_pattern",
+        "event_layer",
+        "particle_sets",
+        "augmentation",
+        "formal_chain",
     ),
-    ("LexicalType", "IndependenceGrade", "MorphFamily", "ConstraintEnvelope"),
+    (
+        "LexicalType",
+        "IndependenceGrade",
+        "MorphFamily",
+        "ConstraintEnvelope",
+        "Root",
+        "Pattern",
+        "Event",
+        "Particle",
+        "Augmentation",
+        "FormalLayer",
+    ),
 )
 
 _reg(
@@ -162,7 +178,7 @@ _reg(
 _reg(
     NucleusId.HUKM,
     "الحكم",
-    (),   # not yet implemented
+    (),  # not yet implemented
     (),
 )
 
